@@ -642,6 +642,97 @@
       margin-bottom: 1rem;
     }
 
+    /* ── CV DOWNLOAD ── */
+    #cv { background: var(--bg); }
+
+    .cv-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s;
+    }
+    .cv-inner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+    .cv-inner:hover { border-color: var(--border-accent); }
+
+    .cv-text { flex: 1; }
+    .cv-text h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: .75rem;
+    }
+    .cv-text p {
+      color: var(--text-muted);
+      font-size: .95rem;
+      line-height: 1.7;
+      max-width: 420px;
+    }
+    .cv-meta {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+    }
+    .cv-meta-item {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: 'Fira Code', monospace;
+      font-size: .75rem;
+      color: var(--text-dim);
+    }
+    .cv-meta-item svg { width: 14px; height: 14px; stroke: var(--accent-light); }
+
+    .cv-actions { display: flex; flex-direction: column; gap: .75rem; align-items: center; }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2rem;
+      background: linear-gradient(135deg, var(--accent), #6d28d9);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: .95rem;
+      white-space: nowrap;
+      transition: all .3s;
+      box-shadow: 0 4px 24px var(--accent-glow);
+    }
+    .btn-download:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px var(--accent-glow);
+    }
+    .btn-download svg { width: 18px; height: 18px; }
+
+    .cv-note {
+      font-size: .75rem;
+      color: var(--text-dim);
+      font-family: 'Fira Code', monospace;
+    }
+
+    @media (max-width: 700px) {
+      .cv-inner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+      .cv-meta { justify-content: center; }
+      .cv-actions { width: 100%; }
+      .btn-download { width: 100%; justify-content: center; }
+    }
+
     /* ── CONTACT ── */
     #contact {
       background: var(--bg-card);
@@ -1113,7 +1204,7 @@
         </div>
         <div class="skill-card-title">Education</div>
         <div class="skill-pill-list">
-          <span class="skill-pill">B.A. Computer Science</span>
+          <span class="skill-pill">Computer Science (In View)</span>
           <span class="skill-pill">University of London</span>
         </div>
       </div>
@@ -1239,6 +1330,11 @@
     <a href="mailto:jehonadab.dev@gmail.com" class="btn-primary" style="display:inline-flex">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       jehonadab.dev@gmail.com
+    </a>
+
+    <a href="resume.pdf" download="Jehonadab-Okpukoro-Resume.pdf" class="btn-outline" style="display:inline-flex; margin-bottom: 2rem;">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download CV
     </a>
 
     <div class="contact-links">
